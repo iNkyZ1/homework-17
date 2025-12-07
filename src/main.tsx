@@ -10,6 +10,7 @@ import LocationDetailsPage from "./pages/LocationDetailsPage";
 import EpisodesPage from "./pages/EpisodesPage";
 import EpisodeDetailsPage from "./pages/EpisodeDetailsPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import LoginPage from "./pages/LoginPage";
 import { AuthProvider } from "./contexts/AuthProvider";
 import PrivateRoute from "./components/PrivateRoute";
 
@@ -22,6 +23,7 @@ if (rootElement !== null) {
     <BrowserRouter>
       <AuthProvider>
         <Routes>
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/" element={<MainLayout />}>
             <Route index element={<HomePage />} />
 
