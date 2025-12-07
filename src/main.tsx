@@ -10,6 +10,7 @@ import LocationDetailsPage from "./pages/LocationDetailsPage";
 import EpisodesPage from "./pages/EpisodesPage";
 import EpisodeDetailsPage from "./pages/EpisodeDetailsPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import { AuthProvider } from "./contexts/AuthProvider";
 
 const rootElement = document.getElementById("root");
 
@@ -18,28 +19,30 @@ if (rootElement !== null) {
 
   root.render(
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<MainLayout />}>
-          <Route index element={<HomePage />} />
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<HomePage />} />
 
-          <Route path="characters">
-            <Route index element={<CharactersPage />} />
-            <Route path=":id" element={<CharacterDetailsPage />} />
+            <Route path="characters">
+              <Route index element={<CharactersPage />} />
+              <Route path=":id" element={<CharacterDetailsPage />} />
+            </Route>
+
+            <Route path="locations">
+              <Route index element={<LocationsPage />} />
+              <Route path=":id" element={<LocationDetailsPage />} />
+            </Route>
+
+            <Route path="episodes">
+              <Route index element={<EpisodesPage />} />
+              <Route path=":id" element={<EpisodeDetailsPage />} />
+            </Route>
+
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
-
-          <Route path="locations">
-            <Route index element={<LocationsPage />} />
-            <Route path=":id" element={<LocationDetailsPage />} />
-          </Route>
-
-          <Route path="episodes">
-            <Route index element={<EpisodesPage />} />
-            <Route path=":id" element={<EpisodeDetailsPage />} />
-          </Route>
-
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
   );
 }

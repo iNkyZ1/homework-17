@@ -15,7 +15,6 @@
     "isolatedModules": true,
     "noEmit": true,
 
-    // Ключевые строки для React/JSX:
     "jsx": "react-jsx",
     "types": ["vite/client", "react", "react-dom"]
   },
