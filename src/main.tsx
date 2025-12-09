@@ -11,7 +11,7 @@ import EpisodesPage from "./pages/EpisodesPage";
 import EpisodeDetailsPage from "./pages/EpisodeDetailsPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import LoginPage from "./pages/LoginPage";
-import { AuthProvider } from "./contexts/AuthProvider";
+import { AuthProvider } from "./hoc/AuthProvider";
 import PrivateRoute from "./components/PrivateRoute";
 
 const rootElement = document.getElementById("root");

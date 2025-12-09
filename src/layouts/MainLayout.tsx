@@ -1,6 +1,6 @@
 import { JSX } from "react";
 import { Link, Outlet } from "react-router-dom";
-import { useAuth } from "../contexts/useAuth";
+import { useAuth } from "../hooks/useAuth";
 
 function MainLayout(): JSX.Element {
   const { isAuthenticated, logout } = useAuth();
